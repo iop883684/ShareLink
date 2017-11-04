@@ -1,23 +1,8 @@
 
 <?php
 
-    // $url = 'http://www.phimmoi.net/phim/doi-cuu-ho-bai-bien-5344/';
+   $url = 'http://www.phimmoi.net/phim/doi-cuu-ho-bai-bien-5344/';
 
-    $video_id = "";
-
-    if(isset($_GET["id"])) {
-
-        $video_id = $_GET["id"];
-
-    } 
-
-    echo '<meta name="apple-itunes-app" content="app-id=1238030603, app-argument=giaitriplus://item/'.$video_id.'">';
-
-    $string = file_get_contents("data.json");
-    $data = json_decode($string,true);
-
-
-    $url = $data[$video_id];
 
     //** Bước 1: Khởi tạo request
     $ch = curl_init(); 
