@@ -36,7 +36,7 @@ th, td {
 	foreach ($data as $key => $value) {
 
 		echo "<tr>";
-		$folder = "http://$_SERVER[HTTP_HOST]/share_app/play.php?id=";
+		$folder = "http://$_SERVER[HTTP_HOST]/index.php?id=";
 		echo '<td> <a href='.$folder.$key.'>'.$key.'</a></td>' ;
 
 
