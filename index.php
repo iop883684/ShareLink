@@ -2,6 +2,19 @@
 
     <!-- <iframe style="position: absolute;width: 100%; height: 100%;">  src="play.php?id=<? echo $_GET["id"]; ?>" ></iframe> -->
 
+<meta name="apple-itunes-app" content="app-id=1238030603, app-argument=giaitriplus://item/'.$video_id.'">
+
+<script type="text/javascript">
+
+    function openApp(){
+
+        setTimeout(function () { window.location = "http://film360.tk"; }, 3000);
+        window.location = "giaitriplus://item/<? echo $_GET["id"] ?>";
+
+    }
+    
+
+</script>
 
 <?
 
@@ -16,7 +29,6 @@
 
     } 
 
-    echo '<meta name="apple-itunes-app" content="app-id=1238030603, app-argument=giaitriplus://item/'.$video_id.'">';
 
 
     $string = file_get_contents("data.json");
@@ -59,16 +71,5 @@
 
 <!-- <a id="btn-film-trailer" class="btn btn-primary btn-film-trailer" title="Trailer Đội Cứu Hộ Bãi Biển - Baywatch" href="phim/doi-cuu-ho-bai-bien-5344/trailer.html" data-videourl="https://www.youtube.com/watch?v=KwZJtE212qs">Trailer</a> -->
 
-<a id="btn-film-download" class="btn btn-green btn" title="Download phim Đội Cứu Hộ Bãi Biển - Baywatch" href="phim/doi-cuu-ho-bai-bien-5344/download.html">Download</a>
+<!-- a id="btn-film-download" class="btn btn-green btn" title="Download phim Đội Cứu Hộ Bãi Biển - Baywatch" href="phim/doi-cuu-ho-bai-bien-5344/download.html">Download</a> -->
 
-<script type="text/javascript">
-
-    function openApp(){
-
-        setTimeout(function () { window.location = "http://film360.tk"; }, 3000);
-        window.location = "giaitriplus://item/<? echo $_GET["id"] ?>";
-
-    }
-    
-
-</script>
