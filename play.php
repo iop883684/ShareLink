@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 
     // $url = 'http://www.phimmoi.net/phim/doi-cuu-ho-bai-bien-5344/';
@@ -27,7 +23,7 @@
 
     $agent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25';
 
-  	curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+    curl_setopt($ch, CURLOPT_USERAGENT, $agent);
 
     //** Bước 2: Thiết lập các tuỳ chọn
     // Thiết lập URL trong request

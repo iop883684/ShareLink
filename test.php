@@ -4,6 +4,8 @@
    $url = 'http://www.phimmoi.net/phim/doi-cuu-ho-bai-bien-5344/';
 
 
+   echo '<meta name="apple-itunes-app" content="app-id=1238030603, app-argument=giaitriplus://item/">';
+
     //** Bước 1: Khởi tạo request
     $ch = curl_init(); 
 
@@ -27,3 +29,11 @@
 
 
 ?>
+
+<a id="btn-film-trailer" class="btn btn-primary btn-film-trailer" title="Trailer Đội Cứu Hộ Bãi Biển - Baywatch" href="phim/doi-cuu-ho-bai-bien-5344/trailer.html" data-videourl="https://www.youtube.com/watch?v=KwZJtE212qs">Trailer</a>
+
+<!-- <script type="text/javascript">
+    
+    window.location = "giaitriplus://";
+
+</script>> -->

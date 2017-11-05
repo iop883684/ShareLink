@@ -1,6 +1,12 @@
-<?php
 
-    // $url = 'http://www.phimmoi.net/phim/doi-cuu-ho-bai-bien-5344/';
+
+    <!-- <iframe style="position: absolute;width: 100%; height: 100%;">  src="play.php?id=<? echo $_GET["id"]; ?>" ></iframe> -->
+
+
+<?
+
+ // $url = 'http://www.phimmoi.net/phim/doi-cuu-ho-bai-bien-5344/';
+
 
     $video_id = "";
 
@@ -12,11 +18,13 @@
 
     echo '<meta name="apple-itunes-app" content="app-id=1238030603, app-argument=giaitriplus://item/'.$video_id.'">';
 
+
     $string = file_get_contents("data.json");
     $data = json_decode($string,true);
 
 
     $url = $data[$video_id];
+
 
     //** Bước 1: Khởi tạo request
     $ch = curl_init(); 
@@ -34,10 +42,33 @@
 
     // ** Bước 3: thực hiện việc gửi request
     $output = curl_exec($ch); 
-    echo $output; // hiển thị nội dung
+
+    
+    $result = str_replace('<a id="btn-film-download"',
+        '<button type="button"  onclick="openApp()"  ',$output);
+    $result1 = str_replace('>Download</a>','>Xem trên App</button>',$result);
+
+
+    // echo $output;
+    echo $result1; // hiển thị nội dung
 
     // ** Bước 4 (tuỳ chọn): Đóng request để giải phóng tài nguyên trên hệ thống
     curl_close($ch);
 
-
 ?>
+
+<!-- <a id="btn-film-trailer" class="btn btn-primary btn-film-trailer" title="Trailer Đội Cứu Hộ Bãi Biển - Baywatch" href="phim/doi-cuu-ho-bai-bien-5344/trailer.html" data-videourl="https://www.youtube.com/watch?v=KwZJtE212qs">Trailer</a> -->
+
+<a id="btn-film-download" class="btn btn-green btn" title="Download phim Đội Cứu Hộ Bãi Biển - Baywatch" href="phim/doi-cuu-ho-bai-bien-5344/download.html">Download</a>
+
+<script type="text/javascript">
+
+    function openApp(){
+
+        setTimeout(function () { window.location = "http://film360.tk"; }, 3000);
+        window.location = "giaitriplus://item/<? echo $_GET["id"] ?>";
+
+    }
+    
+
+</script>
